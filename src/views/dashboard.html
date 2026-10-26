@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechOS Core - Dashboard MVC</title>
+    <!-- Importação do CSS Principal -->
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <!-- Importação da biblioteca externa Toastify para alertas visuais -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Painel Superior: Métricas / Totalizadores -->
+        <header class="dashboard-header">
+            <h1>TechOS Core Dashboard</h1>
+            <div id="painel-metricas">
+                <span>Total de OS: <strong id="total-os">0</strong></span>
+            </div>
+        </header>
 
+        <main class="dashboard-content">
+            <!-- Formulário Lateral: Abertura via Factory -->
+            <aside class="form-aside">
+                <h2>Abrir Novo Chamado</h2>
+                <form id="form-os">
+                    <label for="tipo-usuario">Tipo de Utilizador:</label>
+                    <select id="tipo-usuario" required>
+                        <option value="CLIENTE">Cliente</option>
+                        <option value="TECNICO">Técnico</option>
+                    </select>
+
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required placeholder="Nome completo">
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required placeholder="email@exemplo.com">
+
+                    <label for="extra">Telefone / Especialidade:</label>
+                    <input type="text" id="extra" required placeholder="Contacto ou Especialidade">
+
+                    <label for="descricao">Descrição do Serviço:</label>
+                    <textarea id="descricao" required placeholder="Descreva o problema..."></textarea>
+
+                    <button type="submit">Registar OS</button>
+                </form>
+            </aside>
+
+            <!-- Tabela Central: Lista Dinámicamente Atualizada -->
+            <section class="table-section">
+                <h2>Ordens de Serviço Ativas</h2>
+                <div class="table-responsive">
+                    <table id="tabela-os">
+                        <thead>
+                            <tr>
+                                <th>ID OS</th>
+                                <th>Responsável</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Preenchido dinamicamente via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script da Biblioteca Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Script principal da aplicação -->
+    <script type="module" src="../../public/js/app.js"></script>
+</body>
+</html>
