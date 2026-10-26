@@ -36,3 +36,19 @@ classDiagram
     Usuario <|-- Cliente : Herança
     Usuario <|-- Tecnico : Herança
     OrdemServico --> Cliente : Referencia# techos-core-elivelton-oliveira
+# DOCUMENTAÇÃO DE UI/UX E COMPONENTES (SPRINT 3)
+
+## 1. ARQUITETURA DA INFORMAÇÃO E DASHBOARD
+- **Painel Superior:** Exibe totalizadores consumidos do GerenciadorOS (Singleton).
+- **Formulário Lateral:** Cadastra novos utilizadores/chamados acionando a UsuarioFactory.
+- **Tabela Central:** Lista dinâmica e filtrável de Ordens de Serviço.
+
+## 2. COMPONENTES UI
+- **StatusBadge:** Amarelo (ABERTA), Azul (EM ANDAMENTO), Verde (CONCLUÍDA).
+- **UserCard:** Exibe avatar e dados do Cliente ou Técnico instanciado.
+- **OSTable:** Tabela responsiva para visualização dos chamados.
+
+## 3. CHECKLIST DE ACESSIBILIDADE (WCAG)
+- [x] Contraste mínimo de 4.5:1 nas tabelas e badges.
+- [x] Navegação por TAB em todos os campos de formulário.
+- [x] Rótulos ARIA para ações de alteração de status.
